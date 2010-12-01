@@ -31,8 +31,8 @@ adjacency.unihub(Nv, Ne, graph = FALSE)
   \item{A}{An adjacency matrix of order \eqn{Nv*Nv}.}
 }
 \references{
-  Ginestet, C.E. and Simmons, A. (In Press). Statistical Parametric Network Analysis of Functional
-  Connectivity Dynamics during a Working Memory Task. Neuroimage.
+  Ginestet, C.E. and Simmons, A. (2011). Statistical Parametric Network Analysis of Functional
+  Connectivity Dynamics during a Working Memory Task. Neuroimage, 5(2), 688--704. 
 }
 \author{
    Cedric E Ginestet <c.ginestet05@gmail.com>

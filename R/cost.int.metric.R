@@ -1,3 +1,9 @@
+###
+### See also cost.int() at the end of
+### ../NetworkAnalysis/R/metrics.R
+###
+###########################
+
 cost.int.metric <-
 function(R,
                             bounds=c(0.0,1.0), 
@@ -12,8 +18,11 @@ function(R,
     # Bounds standardization to ensure, they refer to actual cost values. 
     bounds <- bound.standard(bounds,Emax); 
     
-    # Exhaustive method.
+    # Exhaustive method.    
     if(method=="exhaustive" & Emax<=10000){
+       if(metric=="ge"){
+         out <- cxx.cost.int(R,metric=0,samples=samples)
+       }else{
          g <- 0
          for(e in (bounds[1]*Emax):(bounds[2]*Emax)){ 
             Avec<- cost2adj(Rvec=Rvec,E=e,Emax=Emax)
@@ -24,8 +33,9 @@ function(R,
             print(paste("This is cost: ",e)); print(c(min(Rvec),max(Rvec))); print(ls[[2]])}       
          }# e in Emax
          out <- g
+       }# metric.
     }else{method <- "mc"}
-
+    
     # MC method.
     if(method=="mc"){
     vec <- vector("numeric",Tmc); cost <- vector("numeric",Tmc);    

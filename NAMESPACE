@@ -1,0 +1,2 @@
+useDynLib(NetworkAnalysis)
+exportPattern("^[[:alpha:]]+")

@@ -6,7 +6,18 @@
       package, which produces by default a 'nice' heatmap of a given
       adjacency or similarity matrix.}
 \usage{
-naHeatmap(R, alpha = 0.8, main = "", colorkey = FALSE, colorkey.orientation = "bottom", colorscale = c("yellow", "orange", "red"), saving = FALSE, xlab = "", ylab = "", sub = "", bty = "o", at = TRUE, ...)
+naHeatmap(R,
+          alpha = 0.8,
+          main = "", colorkey = FALSE,
+          colorkey.orientation = "bottom",
+          colorscale = c("yellow", "orange", "red"),
+          saving = FALSE,
+          xlab = "",
+          ylab = "",
+          sub = "",
+          bty = "o",
+          at = TRUE,
+          ...)
 }
 \arguments{
   \item{R}{A numeric matrix.}
@@ -41,14 +52,15 @@ naHeatmap(R, alpha = 0.8, main = "", colorkey = FALSE, colorkey.orientation = "b
   Cedric E Ginestet <c.ginestet05@gmail.com>
 }
 \references{
-  Ginestet, C.E. and Simmons, A. (In Press). Statistical Parametric Network Analysis of Functional
-  Connectivity Dynamics during a Working Memory Task. Neuroimage.
+  Ginestet, C.E. and Simmons, A. (2011). Statistical Parametric Network Analysis of Functional
+  Connectivity Dynamics during a Working Memory Task. Neuroimage, 5(2), 688--704. 
 }
 \seealso{\code{\link{cost.int.metric}}, \code{\link{lattice-package}}}
 \examples{
 
-## Generate a simple weighted graph (subtended by a correlation matrix)
-R <- cor(cbind(rnorm(100),rnorm(100),rnorm(100),rnorm(100),rnorm(100),rnorm(100)))
+## Generate a simple weighted graph.
+R <- cor(cbind(rnorm(100),rnorm(100),rnorm(100),
+               rnorm(100),rnorm(100),rnorm(100)))
 R <- metric.standardization(R)
 
 ## With colorkey
@@ -60,12 +72,14 @@ naHeatmap(R,colorkey=TRUE,colorscale=c("black","white"))
 ## With Black and White colork scheme, with title. 
 naHeatmap(R,colorscale=c("black","white"),main="R")
 
-## With Black and White colork scheme, with title and subtitle
+## With Black and White colork scheme, with title and subtitle.
 naHeatmap(R<.5,colorscale=c("black","white"),main="R",
           sub="Thresholded correlation matrix")
 
-## With Black and White colork scheme, with title and subtitle and x- and y- labels.
-naHeatmap(R<.5,colorscale=c("black","white"),main="R", xlab="Vertices",  ylab="Vertices", 
+## With Black and White colork scheme, with title
+## and subtitle and x- and y- labels.
+naHeatmap(R<.5,colorscale=c("black","white"),
+          main="R", xlab="Vertices",  ylab="Vertices", 
           sub="Thresholded correlation matrix")
 }
 \keyword{heatmap}

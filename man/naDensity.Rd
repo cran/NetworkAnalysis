@@ -27,7 +27,8 @@ naDensity(R)
 \examples{
 
 # Construct a random graph.
-R <- cor(cbind(rnorm(100),rnorm(100),rnorm(100),rnorm(100),rnorm(100),rnorm(100)))
+R <- cor(cbind(rnorm(100),rnorm(100),rnorm(100),
+               rnorm(100),rnorm(100),rnorm(100)))
 print(R);
 
 # Density.

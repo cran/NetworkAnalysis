@@ -1,0 +1,7 @@
+## Use the R HOME indirection to support installations of multiple R version
+PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"`
+
+##
+## As an alternative to this indirection, see 'Writing a package that uses Rcpp' .pdf document 
+## by Dirk Eddelbuettel and Romain Francois.
+##
