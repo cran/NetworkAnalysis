@@ -1,7 +1,8 @@
 sym2vec <-
 function(A){  
+   # Take symmetric matrix and return sparse version. 
    n1 <- length(A[1,]); n2 <- length(A[,1]); 
-   if(n1 != n2) stop("Not symmetric matrix to sym2vec().")
+   if(n1 != n2) stop("Not square matrix to sym().")
    out <- vector()
    for(i in 2:n1){
        for(j in 1:(i-1)){
@@ -10,3 +11,4 @@ function(A){
    }# i in n1
 return(out)  
 }
+

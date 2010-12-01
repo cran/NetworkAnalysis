@@ -6,16 +6,15 @@
        Takes a vector as argument and returns a symmetric matrix whose
        upper triangle is the original vector.}
 \usage{
-   vec2sym(vec)
+   vec2sym(vec,Nv=NULL)
 }
 \arguments{
-   \item{vec}{a vector.}
+   \item{vec}{A vector.}
+   \item{Nv}{Deprecated. For consistency with previous codes only.}
 }
 \details{
     The function returns a symmetric matrix whose number of rows
-    (alternatively columns) is 
-    \deqn{\frac{1}{2} + \frac{\sqrt{1+8N}}{2}}{%
-          1/2 + ((1+8*N)^(1/2))/2},
+    (alternatively columns) is \eqn{1/2 + ((1+8*N)^(1/2))/2},
     where \eqn{N} is the length of the original vector. 
 
     The resulting symmetric matrix has
@@ -24,27 +23,29 @@
     tadpoles (edge connecting a vertex to itself) are allowed.
 }
 \value{
-  A symmetric matrix with dimensions as aforementioned. 
+    A symmetric matrix with dimensions as aforementioned.
 }
 \author{
    Cedric E Ginestet <c.ginestet05@gmail.com>
 }
 \references{
-  Ginestet, C.E. (In Press). Statistical Parametric Network Analysis of Functional
+  Ginestet, C.E. and Simmons, A. (In Press). Statistical Parametric Network Analysis of Functional
   Connectivity Dynamics during a Working Memory Task. Neuroimage.
 }
 \seealso{
    \code{\link{sym2vec}}
 }
 \examples{
+
 ## Upper triangle of correlation matrix of 4 random variables:
-\donttest{ranVar <- cbind(rnorm(100),rnorm(100),rnorm(100),rnorm(100))}
-\donttest{R      <- cor(ranVar)}
-\donttest{vecR   <- vec2sym(R)}
+ranVar <- cbind(rnorm(100),rnorm(100),rnorm(100),rnorm(100))
+R      <- cor(ranVar)
+vecR   <- vec2sym(R)
 
 ### Combined use of vec2sym() and vec2sym():
-\donttest{ranVar <- c(rnorm(100),rnorm(100),rnorm(100),rnorm(100))}
-\donttest{R      <- cor(ranVar)}
-\donttest{R      <- sym2vec(vec2sym(R))}
+ranVar <- cbind(rnorm(100),rnorm(100),rnorm(100),rnorm(100))
+R      <- cor(ranVar)
+R      <- sym2vec(vec2sym(R))
+
 }
 \keyword{symmetric matrix}

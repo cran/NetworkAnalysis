@@ -25,12 +25,12 @@
     tadpoles (edge connecting a vertex to itself) are allowed. 
 }
 \value{
-  The function returns a vector of size:
-  \deqn{{n\choose 2}=\frac{n(n-1)}{2}}{n*(n-1)/2},
+  The function returns a vector of size \eqn{n*(n-1)/2},
   where the matrix is of order \eqn{n\times n}.
 }
 \author{
-   Cedric E Ginestet <c.ginestet05@gmail.com>
+  Ginestet, C.E. and Simmons, A. (In Press). Statistical Parametric Network Analysis of Functional
+  Connectivity Dynamics during a Working Memory Task. Neuroimage.
 }
 \references{
   Ginestet, C.E. (In Press). Statistical Parametric Network Analysis of Functional
